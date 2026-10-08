@@ -1,0 +1,11 @@
+.env
+.env.*
+!.env.example
+data/
+*.log
+Thumbs.db
+desktop.ini
+.claude/settings.local.json
+
+# Material privado de trabajo: la llamada con Sarai y capturas del portafolio de otra persona
+referencias/
