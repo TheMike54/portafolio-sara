@@ -16,7 +16,15 @@ Cambios del 2026-10-08 (noche), pedidos por Miguel tras verla con Sarai:
 
 ## Siguiente
 1. Sarai escoge una de las 4 paletas; después se quita la barra de colores.
-2. Miguel decide qué cambios de la auditoría de atención (2026-10-08) se aplican.
+2. Miguel revisa los cambios de la auditoría de atención (aplicados el 2026-10-08):
+   - Franja "En resumen" con 4 tarjetas bajo la portada.
+   - Pie "Consultoría Jurídica · SRE" en la foto.
+   - Frase de portada corta; la larga pasó a la libreta.
+   - Cargos en letra legible y fechas como etiqueta.
+   - "Sobre mí" recortado: fuera dos párrafos largos y "Lo que me define", que repetía los ejes.
+   - Los títulos grandes en cursiva son ya el título real.
+   - Los huecos (Senado, embajadas, Escencia) se quedan a propósito: aún no es la versión final.
+   Medido en celular de 390 px: lo importante queda en las primeras 2 pantallas (antes, en la 5). El largo total bajó de 13.5 a 12.9 pantallas.
 
 ## Pendientes
 | Qué | Depende de | Desde |

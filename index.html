@@ -69,7 +69,6 @@ ul { margin: 0; padding: 0; list-style: none; }
 .eyebrow { font-family: var(--label); font-size: .72rem; font-weight: 600; text-transform: uppercase; letter-spacing: .16em; color: var(--accent); }
 .sec { padding-block: 4rem; position: relative; }
 .sec-head { display: grid; gap: .6rem; margin-bottom: 2.2rem; max-width: 44rem; }
-.sec-title { font-family: var(--display); color: var(--title); font-size: clamp(2.1rem, 4vw, 3.6rem); line-height: 1.05; }
 .sec-sub { color: var(--muted); }
 .pending { display: inline-block; font-family: var(--label); font-size: .78rem; color: var(--accent); border: 1px dashed var(--accent); padding: .35rem .7rem; border-radius: 6px; }
 
@@ -161,6 +160,19 @@ ul { margin: 0; padding: 0; list-style: none; }
 .hero-photo { position: relative; max-width: 26rem; width: 100%; justify-self: center; }
 .hero-img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 42% 40%; border-radius: var(--radius); }
 
+/* ---------- En resumen ---------- */
+.resumen { display: grid; gap: 1rem; padding-block: 0 3rem; }
+.hoy { display: grid; gap: .8rem; }
+.hoy a {
+  display: grid; gap: .3rem; height: 100%; padding: 1rem 1.1rem; text-decoration: none;
+  background: var(--surface); border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: 4px;
+  transition: transform 150ms var(--ease), border-color 150ms ease;
+}
+.hoy a:hover { transform: translateY(-3px); border-color: var(--accent); }
+.hoy .where { font-family: var(--display); font-size: 1.35rem; line-height: 1.15; color: var(--title); font-weight: 600; }
+.hoy .what { font-size: .92rem; color: var(--ink); }
+.hoy .when { margin-top: .3rem; font-size: .72rem; }
+
 /* ---------- Sobre mí ---------- */
 .about { display: grid; gap: 2rem; }
 .about-text { display: grid; gap: 1rem; max-width: 42rem; }
@@ -173,21 +185,19 @@ ul { margin: 0; padding: 0; list-style: none; }
 .axes-grid { display: grid; gap: 1rem; }
 .axis { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.2rem; display: grid; gap: .45rem; transition: transform 150ms var(--ease), border-color 150ms ease; }
 .axis:hover { transform: translateY(-1px); border-color: var(--accent); }
-.axis h3 { font-family: var(--display); font-size: 1.35rem; color: var(--title); display: flex; gap: .6rem; align-items: center; }
+.axis h3 { font-family: var(--display); font-size: 1.25rem; color: var(--title); display: flex; gap: .6rem; align-items: center; }
 .axis h3 i { font-style: normal; font-size: 1.05rem; color: var(--accent); }
-.axis p { color: var(--muted); font-size: .9rem; }
+.axis p { color: var(--muted); font-size: .85rem; line-height: 1.5; }
 
-.defines { display: grid; gap: 0; margin-top: 2.5rem; border-top: 1px solid var(--line); }
-.defines li { display: grid; gap: .25rem; padding-block: 1rem; border-bottom: 1px solid var(--line); }
-.defines b { font-family: var(--label); font-size: .74rem; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
-.defines span { color: var(--muted); font-size: .94rem; }
 
 /* ---------- Trayectoria ---------- */
 .track { display: grid; gap: 2.5rem; }
 .job { display: grid; gap: 1.2rem; }
 .job-body { display: grid; gap: .7rem; min-width: 0; }
 .job h3 { font-family: var(--display); color: var(--title); font-size: clamp(1.6rem, 2.6vw, 2.2rem); line-height: 1.1; }
-.role { font-family: var(--label); font-size: .76rem; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
+/* Cargo y fecha: lo más importante de cada experiencia, en letra legible */
+.role { font-family: var(--body); font-size: 1rem; color: var(--accent); font-weight: 600; line-height: 1.4; }
+.when { justify-self: start; font-family: var(--label); font-size: .78rem; color: var(--ink); border: 1px solid var(--accent); border-radius: 999px; padding: .2rem .7rem; }
 .job p { color: var(--muted); }
 .job p.lead { color: var(--ink); }
 
@@ -196,7 +206,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .org { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.4rem; display: grid; gap: .8rem; align-content: start; transition: transform 150ms var(--ease), border-color 150ms ease; }
 .org:hover { transform: translateY(-2px); border-color: var(--accent); }
 .org h3 { font-family: var(--display); color: var(--title); font-size: 2rem; line-height: 1; }
-.org .role { line-height: 1.5; }
+.org .role { line-height: 1.4; font-size: .95rem; }
 .org p { color: var(--muted); font-size: .94rem; }
 .org .ig { justify-self: start; display: inline-flex; gap: .45rem; align-items: center; font-size: .85rem; font-weight: 600; text-decoration: none; color: var(--accent); }
 .org .ig svg { width: 1rem; height: 1rem; fill: currentColor; }
@@ -279,8 +289,8 @@ body {
   font-size: clamp(2.6rem, 8vw, 5.6rem); line-height: 1; font-style: italic; font-weight: 500; margin-bottom: -.2rem;
 }
 .js .sec-head .script-title { clip-path: inset(0 100% 0 0); }
+.script-title { margin: 0; }
 .js .sec-head.in .script-title { clip-path: inset(0 0 0 0); transition: clip-path 1.3s cubic-bezier(.6, 0, .2, 1) .1s; }
-.sec-title { font-family: var(--label); font-size: clamp(.9rem, 1.3vw, 1.1rem); letter-spacing: .35em; text-transform: uppercase; color: var(--ink); }
 .name { font-family: var(--script); font-style: italic; font-weight: 500; color: var(--accent); font-size: clamp(3rem, min(9.5vw, 10vh), 6.6rem); line-height: 1.05; letter-spacing: -.01em; }
 .name span:first-child { font-family: var(--display); font-style: normal; color: var(--title); font-size: .52em; letter-spacing: .25em; text-transform: uppercase; margin-bottom: .2em; }
 [data-pal="plata"] .name span:first-child { color: var(--ink); }
@@ -333,12 +343,7 @@ body {
 .about-text .quote figcaption { font-size: .85rem; }
 .rings { display: grid; gap: calc(var(--lh) * 2 - .55rem); position: absolute; left: .55rem; top: calc(var(--lh) * 1.25); }
 .rings i { display: block; width: 1.1rem; height: .55rem; border-radius: 999px; border: 2px solid #9aa0ae; border-left-color: #6d7385; background: linear-gradient(#e6e8ee, #a6abb8); }
-.axis { background: var(--surface); border-radius: 4px; rotate: var(--tilt, 0deg); box-shadow: 0 .8rem 1.8rem rgba(0, 0, 0, .3); }
-.axes-grid > :nth-child(1) { --tilt: -1.5deg; }
-.axes-grid > :nth-child(2) { --tilt: 1.2deg; }
-.axes-grid > :nth-child(3) { --tilt: -.8deg; }
-.axes-grid > :nth-child(4) { --tilt: 1.6deg; }
-.axis:hover { rotate: 0deg; transform: translateY(-4px) scale(1.02); }
+.axis { background: var(--surface); border-radius: 4px; padding: 1rem; }
 
 /* Fotos tipo polaroid con cinta */
 .photo { background: var(--paper); padding: .55rem .55rem .8rem; border-radius: 2px; rotate: var(--tilt, -2deg); box-shadow: 0 1rem 2rem rgba(0, 0, 0, .4); position: relative; }
@@ -389,9 +394,9 @@ body {
 
 /* ---------- Tableta y escritorio ---------- */
 @media (min-width: 560px) {
+  .hoy { grid-template-columns: 1fr 1fr; }
   .wrap { padding-inline: clamp(16px, 4vw, 3rem); }
   .axes-grid { grid-template-columns: 1fr 1fr; }
-  .defines { grid-template-columns: 1fr 1fr; column-gap: 2rem; }
   .topics { grid-template-columns: 1fr 1fr; gap: 1.2rem 2rem; }
 }
 @media (min-width: 860px) {
@@ -406,11 +411,11 @@ body {
   .hero-photo { justify-self: end; }
   .about { grid-template-columns: 1.15fr 1fr; gap: 3rem; align-items: start; }
   .axes-grid { grid-template-columns: 1fr 1fr; }
-  .defines { grid-column: 1 / -1; grid-template-columns: repeat(5, 1fr); border-top: 0; gap: 1.5rem; margin-top: 1rem; }
-  .defines li { border-bottom: 0; border-top: 1px solid var(--line); padding-top: 1rem; align-content: start; }
   .job { grid-template-columns: 1.3fr 1fr; gap: 2.5rem; align-items: center; }
   .job:nth-child(even) .photo { order: -1; }
   .orgs { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .hoy { grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+  .resumen { padding-block: 0 4rem; }
   .part { grid-template-columns: 1fr 1fr; gap: 3rem 4rem; }
   .part > .wide { grid-column: 1 / -1; }
   .study { grid-template-columns: .8fr 1.2fr; gap: 4rem; }
@@ -474,7 +479,7 @@ body {
       <p class="eyebrow rv">Portafolio · 2026</p>
       <h1 class="name rv"><span>Sarai</span> <span>Lara Méndez</span></h1>
       <p class="axes rv">Derecho · Relaciones Internacionales · Geopolítica · Diplomacia · Política</p>
-      <p class="lede rv">Mi interés profesional se encuentra particularmente vinculado con el Derecho Internacional, la política exterior, los organismos internacionales y el análisis de los fenómenos políticos que trascienden las fronteras.</p>
+      <p class="lede rv">Egresada de la Licenciatura en Derecho, con servicio social en la <strong>Secretaría de Relaciones Exteriores</strong>.</p>
       <div class="actions rv">
         <a class="btn primary" href="#trayectoria">Ver mi trayectoria</a>
         <a class="btn" href="#contacto">Contacto</a>
@@ -484,25 +489,35 @@ body {
       <figure class="hero-frame">
         <span class="tape t1" aria-hidden="true"></span><span class="tape t2" aria-hidden="true"></span>
         <img class="hero-img" src="fotos/portada.jpeg" alt="Sarai Lara Méndez" width="1439" height="1280">
+        <figcaption>Consultoría Jurídica · SRE</figcaption>
       </figure>
     </div>
+  </section>
+
+  <!-- ===== EN RESUMEN: lo que un visitante debe leer aunque no baje más ===== -->
+  <section class="wrap resumen" aria-label="En resumen">
+    <p class="eyebrow rv">En resumen</p>
+    <ul class="hoy">
+      <li class="rv"><a href="#trayectoria"><span class="where">Secretaría de Relaciones Exteriores</span><span class="what">Servicio social · Consultoría Jurídica</span><span class="when">Jul 2026 – actualmente</span></a></li>
+      <li class="rv"><a href="#trayectoria"><span class="where">Ministerio Público del Estado de México</span><span class="what">Apoyo jurídico · Asistente honoraria</span><span class="when">Dic 2025 – actualmente</span></a></li>
+      <li class="rv"><a href="#organizaciones"><span class="where">FAISA</span><span class="what">Secretaría de Asuntos Jurídicos · Dirección de Cumplimiento Institucional</span></a></li>
+      <li class="rv"><a href="#formacion"><span class="where">Suprema Corte de Justicia de la Nación</span><span class="what">4 diplomados en Derechos Humanos y Seguridad Social</span></a></li>
+    </ul>
   </section>
   <div class="lace" aria-hidden="true"></div>
 
   <!-- ===== SOBRE MÍ ===== -->
   <section class="wrap sec" id="sobre-mi" aria-labelledby="t-about">
     <div class="sec-head rv">
-      <span class="script-title" aria-hidden="true">Hola</span>
+      <h2 class="script-title" id="t-about">Sobre mí</h2>
       <p class="eyebrow">Perfil</p>
-      <h2 class="sec-title" id="t-about">Sobre mí</h2>
       <span class="rule"></span>
     </div>
     <div class="about">
       <div class="about-text rv from-l">
         <span class="rings" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
         <p class="lead">Soy egresada de la Licenciatura en Derecho. Mi formación jurídica despertó en mí un profundo interés por las relaciones internacionales, la geopolítica, el Derecho Internacional, los derechos humanos y la diplomacia.</p>
-        <p class="more">A lo largo de mi formación profesional he buscado complementar el conocimiento jurídico con experiencias en instituciones públicas, espacios legislativos, organizaciones juveniles, actividades diplomáticas y proyectos de investigación y divulgación.</p>
-        <p class="more">Considero que conocer las instituciones desde dentro, participar en espacios de diálogo y acercarme a diferentes perspectivas políticas e internacionales es parte fundamental de la construcción de mi trayectoria profesional.</p>
+        <p class="more">Mi interés profesional se encuentra particularmente vinculado con el Derecho Internacional, la política exterior, los organismos internacionales y el análisis de los fenómenos políticos que trascienden las fronteras.</p>
         <figure class="quote">
           <blockquote>“No basta con mirar cómo se mueve el mundo; también hay que comprender qué decisiones lo transforman.”</blockquote>
           <figcaption>— Sarai Lara Méndez</figcaption>
@@ -514,28 +529,21 @@ body {
         <article class="axis rv from-r"><h3><i>🏛</i>Política</h3><p>Participación Juvenil · Asuntos Legislativos · Políticas Públicas · Vinculación Institucional</p></article>
         <article class="axis rv from-r"><h3><i>✍</i>Comunicación</h3><p>Escritura · Investigación · Divulgación Jurídica · Comunicación Política</p></article>
       </div>
-      <ul class="defines" aria-label="Lo que me define">
-        <li class="rv"><b>Curiosidad internacional</b><span>Me interesa comprender lo que ocurre más allá de las fronteras y las decisiones que generan cambios en el escenario internacional.</span></li>
-        <li class="rv"><b>Formación jurídica</b><span>Mi perspectiva parte del Derecho, la investigación, el análisis y la comprensión de las normas e instituciones.</span></li>
-        <li class="rv"><b>Participación</b><span>Busco involucrarme activamente en espacios políticos, legislativos, académicos y juveniles.</span></li>
-        <li class="rv"><b>Diplomacia</b><span>Me interesa comprender las relaciones entre Estados, instituciones y sociedades, así como los mecanismos de diálogo y cooperación internacional.</span></li>
-        <li class="rv"><b>Comunicación</b><span>Encuentro en la escritura y la investigación herramientas para analizar y comunicar temas complejos de manera clara.</span></li>
-      </ul>
     </div>
   </section>
 
   <!-- ===== TRAYECTORIA ===== -->
   <section class="wrap sec" id="trayectoria" aria-labelledby="t-track">
     <div class="sec-head rv">
-      <span class="script-title" aria-hidden="true">Trayectoria</span>
+      <h2 class="script-title" id="t-track">Trayectoria</h2>
       <p class="eyebrow">Derecho y sector público</p>
-      <h2 class="sec-title" id="t-track">Trayectoria</h2>
       <span class="rule"></span>
     </div>
     <div class="track">
       <article class="job">
         <div class="job-body rv from-l">
-          <p class="role">Servicio social · Consultoría Jurídica · 1 de julio de 2026 – actualmente</p>
+          <p class="role">Servicio social · Consultoría Jurídica</p>
+          <p class="when">1 de julio de 2026 – actualmente</p>
           <h3>Secretaría de Relaciones Exteriores</h3>
           <p class="lead">He participado en actividades vinculadas con tribunales y organizaciones internacionales, con especial acercamiento a temas relacionados con la Corte Penal Internacional.</p>
           <p>Investigación jurídica, revisión de sentencias y decisiones, consulta de estándares internacionales y análisis de instrumentos jurídicos relacionados con asuntos de carácter internacional. Esta experiencia representa uno de los principales vínculos entre mi formación como jurista y mi interés por las relaciones internacionales y la diplomacia.</p>
@@ -547,7 +555,8 @@ body {
       </article>
       <article class="job">
         <div class="job-body rv from-r">
-          <p class="role">Apoyo jurídico · Asistente honoraria · 1 de diciembre de 2025 – actualmente</p>
+          <p class="role">Apoyo jurídico · Asistente honoraria</p>
+          <p class="when">1 de diciembre de 2025 – actualmente</p>
           <h3>Ministerio Público del Estado de México</h3>
           <p class="lead">Experiencia práctica dentro del ámbito de procuración de justicia.</p>
           <p>Análisis jurídico, elaboración de tarjetas informativas, revisión de información relacionada con personas detenidas, análisis de datos probatorios, apoyo en determinaciones ministeriales y seguimiento de actuaciones procesales. Esta experiencia me ha permitido fortalecer mis capacidades de análisis, investigación, redacción jurídica y comprensión del funcionamiento de las instituciones públicas.</p>
@@ -563,9 +572,8 @@ body {
   <!-- ===== ORGANIZACIONES (lo que ella encabeza) ===== -->
   <section class="wrap sec" id="organizaciones" aria-labelledby="t-orgs">
     <div class="sec-head rv">
-      <span class="script-title" aria-hidden="true">Proyectos</span>
+      <h2 class="script-title" id="t-orgs">Organizaciones</h2>
       <p class="eyebrow">FAISA · ABogatitos · Escencia</p>
-      <h2 class="sec-title" id="t-orgs">Organizaciones</h2>
       <span class="rule"></span>
     </div>
     <div class="orgs">
@@ -596,9 +604,8 @@ body {
   <!-- ===== PARTICIPACIÓN (en segundo plano) ===== -->
   <section class="wrap sec" id="participacion" aria-labelledby="t-part">
     <div class="sec-head rv">
-      <span class="script-title" aria-hidden="true">Participación</span>
+      <h2 class="script-title" id="t-part">Participación</h2>
       <p class="eyebrow">Política, juventud y diplomacia</p>
-      <h2 class="sec-title" id="t-part">Participación</h2>
       <p class="sec-sub">He buscado participar activamente en espacios de formación, diálogo y participación juvenil relacionados con asuntos políticos, legislativos e institucionales.</p>
       <span class="rule"></span>
     </div>
@@ -631,9 +638,8 @@ body {
   <!-- ===== FORMACIÓN ===== -->
   <section class="wrap sec" id="formacion" aria-labelledby="t-study">
     <div class="sec-head rv">
-      <span class="script-title" aria-hidden="true">Formación</span>
+      <h2 class="script-title" id="t-study">Formación</h2>
       <p class="eyebrow">Formación e investigación</p>
-      <h2 class="sec-title" id="t-study">Formación</h2>
       <span class="rule"></span>
     </div>
     <div class="study">

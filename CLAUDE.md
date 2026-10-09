@@ -1,6 +1,6 @@
 # portafolio-sara — portafolio web de Sarai Lara Méndez
 
-Página estática (un solo `index.html`, sin build) con el portafolio de Sarai Lara Méndez: Derecho, relaciones internacionales y política. Mientras ella escoge, lleva una barra para cambiar entre 3 propuestas, 4 paletas y el modo del botón de WhatsApp.
+Página estática (un solo `index.html`, sin build) con el portafolio de Sarai Lara Méndez: Derecho, relaciones internacionales y política. Lo que se está comparando con ella en cada momento está en `ESTADO.md`.
 
 <!-- plantilla: proyecto v1 · variante 1 · 2026-10-08 -->
 
@@ -14,12 +14,16 @@ Leer `ESTADO.md`.
 ## Entorno y trampas
 - El repo es público y GitHub Pages publica la rama `main` en `https://themike54.github.io/portafolio-sara/`: un push es publicar.
 - `referencias\` (transcripción de la llamada, capturas del TikTok) no se sube: está en `.gitignore`.
-- La URL guarda la propuesta escogida (`#p3-dorado-burbuja`); `localStorage` la recuerda con la llave `portafolio-sarai`.
+- La barra de arriba guarda lo escogido en la URL y en `localStorage` (llave `portafolio-sarai`); el formato está en el script de `index.html`.
 - Las fuentes vienen de Google Fonts: sin internet la página cae a fuentes del sistema.
 
 ## Decisiones cerradas
 - Celular primero: Sarai lo va a abrir sobre todo desde el celular. En celular el menú es un botón "Menú" desplegable; la fila deslizable se veía cortada.
-- Una sola página con selector de propuesta, no tres archivos: lo pidió Miguel para que ella compare.
+- Una sola página (`index.html`), sin build.
+- Diseño: el de la propuesta 3 (encaje, cinta, libreta), escogido por Sarai y Miguel.
+- Títulos en cursiva legible (Playfair Display itálica); Pinyon Script no se entendía.
+- WhatsApp solo como burbuja abajo a la derecha.
+- Lo importante se lee primero: la franja "Hoy" bajo la portada resume cargos actuales; cargos y fechas van en letra legible, no en la de máquina de escribir.
 - Todo sobre el azul marino "Noche" (`#0E1424`): es el color que ella escogió. Las paletas solo cambian letras y acentos.
 - Las 3 propuestas llevan animaciones al bajar; la 1 sutil (valores de Lumina: 8 px, 520 ms, `cubic-bezier(.2,.7,.3,1)`), la 3 fuerte. Todas respetan "reducir movimiento".
 - La propuesta 3 toma del TikTok el encaje, el clip, el fotomatón y los títulos en cursiva; nunca objetos encima del texto ni letra chica.
