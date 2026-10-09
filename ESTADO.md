@@ -16,16 +16,15 @@ Cambios del 2026-10-08 (noche), pedidos por Miguel tras verla con Sarai:
 
 ## Siguiente
 1. Sarai escoge una de las 4 paletas; después se quita la barra de colores.
-2. Poner el texto que Miguel va a mandar (no se ha dicho de qué sección es).
+2. Miguel decide qué cambios de la auditoría de atención (2026-10-08) se aplican.
 
 ## Pendientes
 | Qué | Depende de | Desde |
 |---|---|---|
-| Texto que Miguel quedó de mandar | Miguel | 2026-10-08 |
 | Escencia: cargo y qué hace ahí | Sarai | 2026-10-08 |
 | Usuario de X | Sarai | 2026-10-08 |
 | Fotos del Senado y de las embajadas de Alemania e Indonesia | Sarai | 2026-10-08 |
-| Foto de la sala del grupo parlamentario de Morena (Cámara de Diputados): ¿dónde va, o no va? No se puso | Miguel / Sarai | 2026-10-08 |
+| Foto de la sala del grupo parlamentario de Morena (Cámara de Diputados): ¿dónde va, o no va? No se puso; Miguel lo revisa | Miguel | 2026-10-08 |
 | Probar que la burbuja de WhatsApp abre su chat desde un celular | Miguel | 2026-10-08 |
 
 ## Decisiones abiertas (las toma Miguel)
