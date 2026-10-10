@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400..700;1,400..600&family=Courier+Prime:wght@400;700&family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400&family=Playfair+Display:ital,wght@1,400..600&display=swap">
 <style>
 /* Portafolio de Sarai. Una sola página con el diseño de la propuesta 3 (encaje, cinta, libreta)
-   y cuatro paletas (data-pal) mientras ella escoge colores; la paleta solo cambia colores.
+   y la paleta "letras blancas" que ella escogió.
    Diseño "mobile first": lo base es celular y se amplía con min-width. */
 
 /* ---------- Paletas: todas sobre el azul marino que eligió ---------- */
@@ -18,22 +18,6 @@
   --bg: #0B1120; --surface: #131B30; --surface2: #1A2340; --ink: #FFFFFF; --muted: #A9B3C7;
   --line: #27314D; --accent: #C9D3E3; --accent2: #34436B; --onaccent: #0B1120; --title: #FFFFFF;
   --paper: #EEF1F6; --paper-ink: #141C30;
-}
-[data-pal="cielo"] {
-  --bg: #0F1730; --surface: #17213F; --surface2: #1E2A4D; --ink: #F1EFEA; --muted: #A8B0C6;
-  --line: #2B3760; --accent: #8DB4F0; --accent2: #2F4380; --onaccent: #0F1730; --title: #E9DDBF;
-  --paper: #EFF3FA; --paper-ink: #16213F;
-}
-/* Dos propuestas nuevas: mismo azul marino con acentos suaves */
-[data-pal="rosa"] {
-  --bg: #0E1424; --surface: #171F35; --surface2: #1E2742; --ink: #F4ECEA; --muted: #B3ABB6;
-  --line: #2C3350; --accent: #E6B3B0; --accent2: #4A3A5C; --onaccent: #0E1424; --title: #F4E3DC;
-  --paper: #FBF1EE; --paper-ink: #1B2236;
-}
-[data-pal="lavanda"] {
-  --bg: #0D1326; --surface: #151C36; --surface2: #1C2444; --ink: #F0EEF6; --muted: #ADABC4;
-  --line: #2A3156; --accent: #B9AEF0; --accent2: #3A3A78; --onaccent: #0D1326; --title: #E6E1FA;
-  --paper: #F2F0FA; --paper-ink: #171B36;
 }
 
 /* ---------- Tipografías y movimiento ---------- */
@@ -49,7 +33,7 @@
 }
 
 /* ---------- Base (celular) ---------- */
-html { font-size: clamp(15.5px, 0.35vw + 13px, 20px); scroll-behavior: smooth; scroll-padding-top: 7.5rem; overflow-x: clip; }
+html { font-size: clamp(15.5px, 0.35vw + 13px, 20px); scroll-behavior: smooth; scroll-padding-top: 5rem; overflow-x: clip; }
 *, *::before, *::after { box-sizing: border-box; }
 body {
   margin: 0; background: var(--bg); color: var(--ink);
@@ -96,24 +80,9 @@ ul { margin: 0; padding: 0; list-style: none; }
 .photo figcaption { font-size: .8rem; color: var(--muted); line-height: 1.4; }
 .photo figcaption b { color: var(--ink); font-weight: 600; }
 
-/* ---------- Barra de colores (no es parte del portafolio; se quita cuando ella escoja) ---------- */
-.switch {
-  position: sticky; top: 0; z-index: 60;
-  background: #070A12; color: #ECEAE4; font-family: 'DM Sans', system-ui, sans-serif; font-size: .78rem;
-  border-bottom: 1px solid #1E2436;
-}
-.switch .wrap { display: flex; align-items: center; gap: .5rem 1rem; flex-wrap: wrap; padding-block: .45rem; }
-.sw-group { display: flex; align-items: center; gap: .35rem; }
-.sw-label { color: #8E93A3; margin-right: .15rem; }
-.switch button { font: inherit; color: inherit; cursor: pointer; border: 1.5px solid transparent; background: #161B29; border-radius: 8px; padding: .3rem .6rem; }
-.switch button[aria-pressed="true"] { border-color: #ECEAE4; background: #262D42; }
-.switch .sw-pal button { width: 1.6rem; height: 1.6rem; padding: 0; border-radius: 50%; display: grid; place-items: center; }
-.switch .sw-pal i { width: 1.05rem; height: 1.05rem; border-radius: 50%; display: block; }
-.sw-name { color: #8E93A3; margin-left: auto; display: none; }
-
 /* ---------- Encabezado del sitio ---------- */
 .site-top {
-  position: sticky; top: var(--switch-h, 2.6rem); z-index: 50;
+  position: sticky; top: 0; z-index: 50;
   background: color-mix(in srgb, var(--bg) 88%, transparent);
   backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line);
@@ -221,6 +190,11 @@ ul { margin: 0; padding: 0; list-style: none; }
 .place .photo figcaption { display: none; }
 .place h4 { margin: 0 0 .25rem; font-family: var(--display); font-size: 1.3rem; color: var(--title); font-weight: 500; }
 .place p { color: var(--muted); font-size: .88rem; }
+/* Embajadas: sin fotos, tarjetas de texto con el país grande */
+.embajadas { gap: .9rem; }
+.place.sin-foto { grid-template-columns: 1fr; padding: 1rem 1.1rem; background: var(--surface); border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: 4px; }
+.place.sin-foto .kicker { font-family: var(--label); font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); margin: 0 0 .15rem; }
+.place.sin-foto h4 { font-size: 1.6rem; }
 .chips { display: flex; flex-wrap: wrap; gap: .45rem; }
 .chips li { font-size: .8rem; padding: .3rem .75rem; border: 1px solid var(--line); border-radius: 999px; color: var(--ink); }
 .block-text { color: var(--muted); max-width: 42rem; margin-bottom: 1rem; }
@@ -366,10 +340,9 @@ body {
 .org .logo img { aspect-ratio: 16 / 10; object-fit: contain; padding: .6rem; background: var(--logo-bg, #fff); border-radius: 2px; }
 .orgs > :nth-child(1) { --tilt: -1deg; }
 .orgs > :nth-child(2) { --tilt: 1.2deg; }
-.orgs > :nth-child(3) { --tilt: -.6deg; }
 .org:hover { rotate: 0deg; transform: translateY(-6px); }
 .org::after { content: ""; position: absolute; top: -.6rem; right: 1.4rem; width: 1.6rem; height: 2.6rem; border: 2.5px solid #a9aebb; border-bottom: 0; border-radius: 1rem 1rem 0 0; }
-.place { border-bottom-style: dashed; }
+.place:not(.sin-foto) { border-bottom-style: dashed; }
 .place .photo { padding: .3rem; --tilt: -3deg; }
 .place .photo img { aspect-ratio: 1; }
 .place .photo::before { width: 2.2rem; height: .8rem; top: -.4rem; }
@@ -400,8 +373,6 @@ body {
   .topics { grid-template-columns: 1fr 1fr; gap: 1.2rem 2rem; }
 }
 @media (min-width: 860px) {
-  .switch .wrap { flex-wrap: nowrap; }
-  .sw-name { display: inline; }
   .menu-btn { display: none; }
   .nav { position: relative; top: auto; display: flex; gap: 1.1rem; padding: .35rem 0; background: none; border: 0; box-shadow: none; opacity: 1; visibility: visible; transform: none; transition: none; font-size: .86rem; }
   .nav a { padding: .25rem 0; font-size: inherit; border: 0; }
@@ -413,7 +384,8 @@ body {
   .axes-grid { grid-template-columns: 1fr 1fr; }
   .job { grid-template-columns: 1.3fr 1fr; gap: 2.5rem; align-items: center; }
   .job:nth-child(even) .photo { order: -1; }
-  .orgs { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .orgs { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+  .org .logo img { aspect-ratio: 2 / 1; }
   .hoy { grid-template-columns: repeat(4, 1fr); gap: 1rem; }
   .resumen { padding-block: 0 4rem; }
   .part { grid-template-columns: 1fr 1fr; gap: 3rem 4rem; }
@@ -440,20 +412,6 @@ body {
 </style>
 </head>
 <body>
-
-<!-- Barra para escoger colores. Se quita cuando Sarai escoja. -->
-<div class="switch" id="switch">
-  <div class="wrap">
-    <div class="sw-group sw-pal" role="group" aria-label="Colores">
-      <span class="sw-label">Colores</span>
-      <button data-pal="plata" aria-pressed="true" title="Letras blancas"><i style="background:linear-gradient(135deg,#0B1120 50%,#FFFFFF 50%)"></i></button>
-      <button data-pal="cielo" aria-pressed="false" title="Crema y azul cielo"><i style="background:linear-gradient(135deg,#0F1730 50%,#8DB4F0 50%)"></i></button>
-      <button data-pal="rosa" aria-pressed="false" title="Rosa palo"><i style="background:linear-gradient(135deg,#0E1424 50%,#E6B3B0 50%)"></i></button>
-      <button data-pal="lavanda" aria-pressed="false" title="Lavanda"><i style="background:linear-gradient(135deg,#0D1326 50%,#B9AEF0 50%)"></i></button>
-    </div>
-    <span class="sw-name" id="swname">Letras blancas</span>
-  </div>
-</div>
 
 <header class="site-top" id="sitetop">
   <div class="wrap">
@@ -573,7 +531,7 @@ body {
   <section class="wrap sec" id="organizaciones" aria-labelledby="t-orgs">
     <div class="sec-head rv">
       <h2 class="script-title" id="t-orgs">Organizaciones</h2>
-      <p class="eyebrow">FAISA · ABogatitos · Escencia</p>
+      <p class="eyebrow">FAISA · ABogatitos</p>
       <span class="rule"></span>
     </div>
     <div class="orgs">
@@ -584,19 +542,12 @@ body {
         <p>Formo parte de un espacio enfocado en la formación y participación juvenil, con acercamiento a actividades relacionadas con asuntos jurídicos, cumplimiento institucional, vinculación y participación política.</p>
         <a class="ig" href="https://www.instagram.com/faisa_mx/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-3.3-.1-4.8-1.7-4.9-4.9C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8C2.4 3.9 3.9 2.4 7.2 2.3 8.4 2.2 8.8 2.2 12 2.2zm0 4.6a5.2 5.2 0 1 0 0 10.4 5.2 5.2 0 0 0 0-10.4zm0 8.6a3.4 3.4 0 1 1 0-6.8 3.4 3.4 0 0 1 0 6.8zm5.4-9.9a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4z"/></svg>@faisa_mx</a>
       </article>
-      <article class="org rv">
+      <article class="org rv from-r">
         <figure class="photo logo"><img src="fotos/abogatitos-logo.jpg" alt="Logo de ABogatitos" loading="lazy" width="798" height="232" style="--logo-bg:#C4D62C"></figure>
         <h3>ABogatitos</h3>
         <p class="role">Proyecto editorial jurídico · Divulgación del Derecho</p>
         <p>Me interesa especialmente la investigación, comunicación, creación de contenido, redes sociales, verificación de información y desarrollo editorial. La escritura representa para mí una herramienta para comunicar temas jurídicos, políticos e internacionales de una manera accesible.</p>
         <a class="ig" href="https://www.instagram.com/abogatitxs/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-3.3-.1-4.8-1.7-4.9-4.9C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8C2.4 3.9 3.9 2.4 7.2 2.3 8.4 2.2 8.8 2.2 12 2.2zm0 4.6a5.2 5.2 0 1 0 0 10.4 5.2 5.2 0 0 0 0-10.4zm0 8.6a3.4 3.4 0 1 1 0-6.8 3.4 3.4 0 0 1 0 6.8zm5.4-9.9a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4z"/></svg>@abogatitxs</a>
-      </article>
-      <article class="org rv from-r">
-        <figure class="photo logo"><img src="fotos/escencia-logo.jpg" alt="Logo de Escencia: inspirar para transformar, renacer para trascender" loading="lazy" width="1140" height="1107" style="--logo-bg:#FFFBFA"></figure>
-        <h3>Escencia</h3>
-        <p class="role">Cargo pendiente</p>
-        <p class="pending">Aquí necesito que me describas qué es lo que haces.</p>
-        <a class="ig" href="https://www.instagram.com/im_escencia/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-3.3-.1-4.8-1.7-4.9-4.9C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8C2.4 3.9 3.9 2.4 7.2 2.3 8.4 2.2 8.8 2.2 12 2.2zm0 4.6a5.2 5.2 0 1 0 0 10.4 5.2 5.2 0 0 0 0-10.4zm0 8.6a3.4 3.4 0 1 1 0-6.8 3.4 3.4 0 0 1 0 6.8zm5.4-9.9a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4z"/></svg>@im_escencia</a>
       </article>
     </div>
   </section>
@@ -614,15 +565,15 @@ body {
         <h3 class="sub-title rv">Espacios institucionales</h3>
         <ul class="places">
           <li class="place rv from-l"><figure class="photo"><img src="fotos/camara-pleno.jpg" alt="Salón de sesiones de la Cámara de Diputados" loading="lazy" width="1179" height="1572" style="object-position: 50% 40%"></figure><div><h4>Cámara de Diputados</h4><p>Actividades y encuentros de organizaciones juveniles; acercamiento a espacios de trabajo legislativo y a la dinámica institucional de la Cámara.</p></div></li>
-          <li class="place rv from-l"><figure class="photo"><div class="ph"></div><figcaption>Foto</figcaption></figure><div><h4>Senado de la República</h4><p>Actividades y encuentros vinculados con formación, participación juvenil y asuntos de carácter legislativo.</p></div></li>
+          <li class="place rv from-l"><figure class="photo"><img src="fotos/senado.jpg" alt="Torre del Senado de la República adornada con papel picado tricolor" loading="lazy" width="905" height="1600" style="object-position: 50% 35%"></figure><div><h4>Senado de la República</h4><p>Actividades y encuentros vinculados con formación, participación juvenil y asuntos de carácter legislativo.</p></div></li>
           <li class="place rv from-l"><figure class="photo"><img src="fotos/pri-sede.jpg" alt="Entrada del edificio Lázaro Cárdenas en la Sede Nacional del PRI" loading="lazy" width="1200" height="1600" style="object-position: 50% 70%"></figure><div><h4>Sede Nacional del PRI</h4><p>Actividades de carácter político y juvenil, fortaleciendo mi experiencia en espacios de diálogo, formación y vinculación política.</p></div></li>
         </ul>
       </div>
       <div>
         <h3 class="sub-title rv">Diplomacia y relaciones internacionales</h3>
-        <ul class="places">
-          <li class="place rv from-r"><figure class="photo"><div class="ph"></div><figcaption>Foto</figcaption></figure><div><h4>Embajada de Alemania</h4><p>Actividades de acercamiento académico y cultural a la representación diplomática, fortaleciendo mi interés por las relaciones bilaterales y la realidad internacional.</p></div></li>
-          <li class="place rv from-r"><figure class="photo"><div class="ph"></div><figcaption>Foto</figcaption></figure><div><h4>Embajada de Indonesia</h4><p>Visita y actividad de acercamiento diplomático, con interés particular en conocer la perspectiva de Indonesia.</p></div></li>
+        <ul class="places embajadas">
+          <li class="place sin-foto rv from-r"><div><p class="kicker">Embajada</p><h4>Alemania</h4><p>Actividades de acercamiento académico y cultural a la representación diplomática, fortaleciendo mi interés por las relaciones bilaterales y la realidad internacional.</p></div></li>
+          <li class="place sin-foto rv from-r"><div><p class="kicker">Embajada</p><h4>Indonesia</h4><p>Visita y actividad de acercamiento diplomático, con interés particular en conocer la perspectiva de Indonesia.</p></div></li>
         </ul>
       </div>
       <div class="wide">
@@ -685,7 +636,6 @@ body {
     </div>
     <div class="contact-list rv from-r">
       <a href="https://www.instagram.com/asrih_lm/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-3.3-.1-4.8-1.7-4.9-4.9C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8C2.4 3.9 3.9 2.4 7.2 2.3 8.4 2.2 8.8 2.2 12 2.2zm0 4.6a5.2 5.2 0 1 0 0 10.4 5.2 5.2 0 0 0 0-10.4zm0 8.6a3.4 3.4 0 1 1 0-6.8 3.4 3.4 0 0 1 0 6.8zm5.4-9.9a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4z"/></svg><span class="k">Instagram</span><span class="v">@asrih_lm</span></a>
-      <div class="soon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.8 3h3.1l-6.8 7.7L22 21h-6.2l-4.9-6.3L5.3 21H2.2l7.2-8.3L1.8 3h6.4l4.4 5.8L17.8 3zm-1.1 16.2h1.7L7.4 4.7H5.6l11.1 14.5z"/></svg><span class="k">X</span><span class="v">Próximamente</span></div>
       <a href="mailto:sasasans740@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18v14H3V5zm2 2v.5l7 4.4 7-4.4V7H5zm14 2.8-7 4.4-7-4.4V17h14V9.8z"/></svg><span class="k">Correo</span><span class="v">sasasans740@gmail.com</span></a>
     </div>
   </section>
@@ -704,20 +654,6 @@ root.classList.add('js');
 const $ = s => document.querySelector(s);
 const $$ = s => [...document.querySelectorAll(s)];
 const menosMovimiento = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-const NOMBRE_PAL = { plata: 'Letras blancas', cielo: 'Crema y azul cielo', rosa: 'Rosa palo', lavanda: 'Lavanda' };
-let estado = { pal: 'plata' };
-
-function leerInicial() {
-  // Acepta "#cielo" y también los enlaces viejos ("#p3-cielo-burbuja"); un color que ya no existe cae al de inicio
-  const m = location.hash.match(/(plata|cielo|rosa|lavanda)/);
-  if (m) return { pal: m[1] };
-  try {
-    const g = JSON.parse(localStorage.getItem('portafolio-sarai'));
-    if (g && NOMBRE_PAL[g.pal]) return { pal: g.pal };
-  } catch (e) {}
-  return estado;
-}
 
 /* Animaciones al bajar: cada .rv aparece al entrar en pantalla, escalonado entre hermanos */
 let observador;
@@ -786,28 +722,11 @@ document.addEventListener('click', e => { if (!e.target.closest('.site-top')) me
 let navTick = false;
 addEventListener('scroll', () => { if (!navTick) { navTick = true; requestAnimationFrame(() => { navTick = false; seccionActual(); }); } }, { passive: true });
 
-function medirBarra() { root.style.setProperty('--switch-h', $('#switch').offsetHeight + 'px'); }
-addEventListener('resize', () => { medirBarra(); seccionActual(); });
+addEventListener('resize', seccionActual);
 
-function aplicar(reanimar) {
-  root.dataset.pal = estado.pal;
-  $$('.sw-pal button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.pal === estado.pal)));
-  $('#swname').textContent = NOMBRE_PAL[estado.pal];
-  try { localStorage.setItem('portafolio-sarai', JSON.stringify(estado)); } catch (e) {}
-  try { history.replaceState(null, '', `#${estado.pal}`); } catch (e) {}
-  medirBarra();
-  if (reanimar) prepararAnimaciones();
-  paralaje();
-  requestAnimationFrame(seccionActual);
-}
-
-$('#switch').addEventListener('click', e => {
-  const b = e.target.closest('button'); if (!b || !b.dataset.pal) return;
-  estado.pal = b.dataset.pal; aplicar(false);
-});
-
-estado = leerInicial();
-aplicar(true);
+prepararAnimaciones();
+paralaje();
+requestAnimationFrame(seccionActual);
 document.fonts && document.fonts.ready.then(seccionActual);
 </script>
 </body>

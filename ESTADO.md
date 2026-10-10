@@ -1,46 +1,33 @@
 # Estado de portafolio-sara
 
-*Fecha: 2026-10-08 · Estado: vigente; se actualiza al cerrar cada sesión*
+*Fecha: 2026-10-10 · Estado: vigente; se actualiza al cerrar cada sesión*
 
 ## En curso
-Publicada en `https://themike54.github.io/portafolio-sara/` con el diseño de la propuesta 3, que escogieron Sarai y Miguel. La barra de arriba solo cambia colores, entre 4 paletas: letras blancas (`#plata`, la de inicio), crema y azul cielo (`#cielo`), y dos nuevas para comparar, rosa palo (`#rosa`) y lavanda (`#lavanda`). El WhatsApp va solo como burbuja abajo a la derecha. En celular el menú es un botón "Menú" desplegable.
+Publicada en `https://themike54.github.io/portafolio-sara/` con el diseño de la propuesta 3 y la paleta que escogió Sarai: azul marino con letras blancas (`plata`). Ya no hay barra de colores. El WhatsApp va solo como burbuja abajo a la derecha. En celular el menú es un botón "Menú" desplegable.
 
-Cambios del 2026-10-08 (noche), pedidos por Miguel tras verla con Sarai:
-- La portada lleva una sola foto pegada con cinta. Se quitaron el fotomatón de 3 fotos y el sello giratorio "Derecho · Diplomacia".
-- Los títulos usan una cursiva legible: Playfair Display itálica en lugar de Pinyon Script, que no se entendía.
-- En la libreta de "Sobre mí", cada línea cae sobre su renglón: todo el texto usa la misma altura de línea (`--lh`) que las rayas, y lleva margen rojo.
-- Fotos nuevas: SRE (torre), Fiscalía del Edomex, logos de FAISA, ABogatitos y Escencia, Cámara de Diputados (pleno) y sede del PRI.
-- Fechas: SRE, desde el 1 de julio de 2026 hasta hoy; Ministerio Público, desde el 1 de diciembre de 2025 hasta hoy.
-- Correo `sasasans740@gmail.com` en Contacto.
-- La versión anterior (3 propuestas) y la foto rosa de la SRE quedaron en `_archivo\` (no se sube).
+Cambios del 2026-10-10, pedidos por Sarai a través de Miguel:
+- Paleta final: letras blancas. Se quitaron la barra y las otras 3 paletas (cielo, rosa, lavanda).
+- Escencia fuera de Organizaciones: no tiene nada que poner. Quedan FAISA y ABogatitos, en 2 columnas en escritorio. Su logo pasó a `_archivo\`.
+- X (Twitter) fuera de Contacto: nunca llegó el usuario.
+- Senado con su foto (torre con papel picado).
+- Embajadas de Alemania e Indonesia sin fotos: ahora son tarjetas de texto con el país grande.
+- La versión anterior quedó en `_archivo\2026-10-10-index-con-barra-colores.html` (no se sube).
+
+Cambios anteriores (2026-10-08): portada con una foto pegada con cinta, cursiva legible (Playfair Display), libreta alineada a sus renglones, franja "En resumen", cargos y fechas en letra legible.
 
 ## Siguiente
-1. Sarai escoge una de las 4 paletas; después se quita la barra de colores.
-2. Miguel revisa los cambios de la auditoría de atención (aplicados el 2026-10-08):
-   - Franja "En resumen" con 4 tarjetas bajo la portada.
-   - Pie "Consultoría Jurídica · SRE" en la foto.
-   - Frase de portada corta; la larga pasó a la libreta.
-   - Cargos en letra legible y fechas como etiqueta.
-   - "Sobre mí" recortado: fuera dos párrafos largos y "Lo que me define", que repetía los ejes.
-   - Los títulos grandes en cursiva son ya el título real.
-   - Los huecos (Senado, embajadas, Escencia) se quedan a propósito: aún no es la versión final.
-   Medido en celular de 390 px: lo importante queda en las primeras 2 pantallas (antes, en la 5). El largo total bajó de 13.5 a 12.9 pantallas.
+1. Miguel revisa los cambios del 2026-10-10 en su celular.
 
 ## Pendientes
 | Qué | Depende de | Desde |
 |---|---|---|
-| Escencia: cargo y qué hace ahí | Sarai | 2026-10-08 |
-| Usuario de X | Sarai | 2026-10-08 |
-| Fotos del Senado y de las embajadas de Alemania e Indonesia | Sarai | 2026-10-08 |
-| Foto de la sala del grupo parlamentario de Morena (Cámara de Diputados): ¿dónde va, o no va? No se puso; Miguel lo revisa | Miguel | 2026-10-08 |
+| Foto de la sala del grupo parlamentario de Morena (Cámara de Diputados): ¿dónde va, o no va? No se puso | Miguel | 2026-10-08 |
+| Tarjeta de la SCJN en "En resumen": dice "4 diplomados en Derechos Humanos y Seguridad Social", resumen hecho por Claude; confirmar redacción | Miguel / Sarai | 2026-10-08 |
 | Probar que la burbuja de WhatsApp abre su chat desde un celular | Miguel | 2026-10-08 |
-
-## Decisiones abiertas (las toma Miguel)
-- Paleta final: la escoge Sarai.
 
 ## Sin comprobar
 - La burbuja de WhatsApp (`wa.me/525512978357`) no se ha abierto en un celular.
-- Cómo se ve en un celular real. Se probó con Playwright a 390 px y en 1280×720, 1920×1080 y 2560×1440: sin errores, sin barra horizontal y con todo visible al bajar.
+- Cómo se ve en un celular real. Se probó con Playwright a 390 px y en 1280×720, 1920×1080 y 2560×1440 (2026-10-10): sin errores, sin barra horizontal, sin fotos rotas y con todo visible al bajar.
 
 ## Fechas
 | Fecha | Qué | Estado |
@@ -48,3 +35,4 @@ Cambios del 2026-10-08 (noche), pedidos por Miguel tras verla con Sarai:
 | 2026-10-08 | Llamada con Sarai: web, colores azul marino, 3 propuestas | Hecho |
 | 2026-10-08 | Primera versión publicada en GitHub Pages | Hecho |
 | 2026-10-08 | Escogen la propuesta 3 y la burbuja; quedan 4 paletas | Hecho |
+| 2026-10-10 | Sarai escoge letras blancas; fuera Escencia, X y fotos de embajadas | Hecho |
